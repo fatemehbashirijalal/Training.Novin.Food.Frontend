@@ -1,5 +1,43 @@
-<div id="login">
-</div>
-<div>
-  <a [routerLink]="'/register'">ثبتنام</a>
+<div id="frame">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>کام فود</mat-card-title>
+    <mat-card-subtitle>سامانه سفارش غذا</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="../../assets/images/food1.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <br>
+    <form class="login-form">
+      <mat-form-field class="login-full-width">
+        <mat-label>نام کاربری</mat-label>
+        <input type="text" matInput [formControl]="username"
+               placeholder="برای مثال:فاطمه">
+
+        <mat-error *ngIf="username.hasError('required')">
+          حتما نام کاربری وارد شود
+        </mat-error>
+        <mat-error *ngIf="username.hasError('minlength')">
+          نام کاربری باید حداقل 4 حرف باشد
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="login-full-width">
+        <mat-label>کلمه عبور</mat-label>
+        <input type="password" matInput [formControl]="password"
+               placeholder="برای مثال:12345678">
+
+        <mat-error *ngIf="password.hasError('required')">
+          حتما کلمه عبور وارد شود
+        </mat-error>
+        <mat-error *ngIf="password.hasError('minlength')">
+          کلمه عبور باید حداقل 8 حرف باشد
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button>ورود</button>&nbsp;
+    <button mat-raised-button>ثبتنام</button>
+  </mat-card-actions>
+</mat-card>
 </div>
