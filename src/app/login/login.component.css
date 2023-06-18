@@ -6,7 +6,7 @@
   justify-content: center;
 }
 .example-card {
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .example-header-image {
@@ -24,3 +24,7 @@
   margin-top: 2vh;
   margin-bottom: 1vh;
 }
+.bt{
+   background-color: #4CAF50;
+}
+

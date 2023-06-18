@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,10 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  constructor(private loginService:LoginService){}
   username= new FormControl('', [Validators.required, Validators.minLength(4)]);
   password= new FormControl('', [Validators.required, Validators.minLength(8)]);
+  login(){
+    this.loginService.login(this.username.value??'',this.password.value??'')
+  }
 }
