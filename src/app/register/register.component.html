@@ -5,8 +5,6 @@
     <mat-card-title>کام فود</mat-card-title>
     <mat-card-subtitle>سامانه سفارش آنلاین غذا </mat-card-subtitle>
   </mat-card-header>
-
-
   <mat-card-content>
       <div class="who">
       <mat-radio-group [(ngModel)]="selectedOption"  aria-label="یکی از گزینه ها را انتخاب کنید">
@@ -113,24 +111,13 @@
             </mat-error>
           </mat-form-field>
           <mat-form-field class="login-full-width">
-            <mat-label>شماره ثابت </mat-label>
-            <input type="tel" matInput [formControl]="restownerphon"
-                   placeholder="  برای مثال:081 ">
-            <mat-error *ngIf="restownerphon.hasError('required')">
-                 وارد کردن شماره همراه الزامیست
-            </mat-error>
-            <mat-error *ngIf="restownerphon.hasError('minlength')">
-              شماره موبایل  باید حداقل 10 حرف باشد
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field class="login-full-width">
             <mat-label>نام رستوران</mat-label>
             <input type="text" matInput [formControl]="restaurantname">
             <mat-error *ngIf="restaurantname.hasError('required')">
               وارد کردن نام رستوران الزامیست
             </mat-error>
             <mat-error *ngIf="restaurantname.hasError('minlength')">
-              نام و نام خانوادگی باید حداقل 2 حرف باشد
+              نام رستوران باید حداقل 2 حرف باشد
             </mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width">
@@ -141,12 +128,36 @@
             </mat-error>
             <textarea matInput></textarea>
           </mat-form-field>
+          <mat-form-field class="login-full-width">
+            <mat-label>نام کاربری</mat-label>
+            <input type="text" matInput [formControl]="restownerusername"
+                   placeholder="  برای مثال:فاطمه ">
+
+            <mat-error *ngIf="restownerusername.hasError('required')">
+               ایجاد کردن نام کاربری الزامیست
+            </mat-error>
+            <mat-error *ngIf="restownerusername.hasError('minlength')">
+              نام کاربری باید حداقل 8 حرف باشد
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="login-full-width">
+            <mat-label>کلمه عبور</mat-label>
+            <input type="password" matInput [formControl]="restownerpassword"
+                   placeholder="برای مثال:12345678">
+
+            <mat-error *ngIf="restownerpassword.hasError('required')">
+                  ایجاد کردن کلمه عبور الزامیست
+            </mat-error>
+            <mat-error *ngIf="restownerpassword.hasError('minlength')">
+              کلمه عبور باید حداقل 8 حرف باشد
+            </mat-error>
+          </mat-form-field>
 
         </form>
       </div>
   </mat-card-content>
   <mat-card-actions>
-    <button    mat-raised-button  [routerLink]="'/register'">ثبتنام</button>
+    <button  mat-raised-button  [routerLink]="'/register'">ثبتنام</button>
     <button  mat-raised-button [routerLink]="'/login'">انصراف</button>
   </mat-card-actions>
 </mat-card>
